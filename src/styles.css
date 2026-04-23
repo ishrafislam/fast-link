@@ -1,0 +1,396 @@
+:root {
+  font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+  color: #e8f1ef;
+  background:
+    radial-gradient(circle at top left, rgba(57, 152, 122, 0.35), transparent 28%),
+    radial-gradient(circle at top right, rgba(36, 79, 143, 0.4), transparent 25%),
+    linear-gradient(180deg, #0c1418 0%, #111f28 100%);
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+#app {
+  min-height: 100vh;
+}
+
+.page-shell,
+.auth-shell {
+  width: min(1200px, calc(100vw - 2rem));
+  margin: 0 auto;
+  padding: 2rem 0 4rem;
+}
+
+.auth-shell,
+.center-state {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.hero-card,
+.status-card,
+.filters-panel,
+.summary-card,
+.repo-card,
+.detail-card {
+  background: rgba(9, 17, 22, 0.72);
+  border: 1px solid rgba(201, 255, 244, 0.1);
+  border-radius: 24px;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(20px);
+}
+
+.hero-card,
+.status-card,
+.detail-card {
+  padding: 2rem;
+}
+
+.hero-card {
+  max-width: 720px;
+}
+
+.eyebrow {
+  margin: 0 0 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: #8bd8b2;
+  font-size: 0.78rem;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+.feature-list {
+  display: grid;
+  gap: 0.75rem;
+  padding-left: 1.2rem;
+  margin: 1.5rem 0 2rem;
+}
+
+.primary-button,
+.primary-link,
+.ghost-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 999px;
+  padding: 0.9rem 1.4rem;
+  border: none;
+  cursor: pointer;
+  transition: transform 140ms ease, background 140ms ease;
+}
+
+.primary-button,
+.primary-link {
+  color: #04130f;
+  background: linear-gradient(135deg, #8bd8b2 0%, #d3f86a 100%);
+  font-weight: 700;
+}
+
+.ghost-button {
+  background: rgba(255, 255, 255, 0.06);
+  color: #d8e8e1;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.primary-button:hover,
+.primary-link:hover,
+.ghost-button:hover {
+  transform: translateY(-1px);
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+
+.header-copy {
+  max-width: 58rem;
+  color: #b3c8c1;
+}
+
+.user-chip {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.8rem 1rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.user-chip p {
+  margin: 0;
+  color: #9cb4ad;
+  font-size: 0.9rem;
+}
+
+.avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.summary-card {
+  padding: 1.3rem;
+}
+
+.summary-card span {
+  display: block;
+  color: #9cb4ad;
+  margin-bottom: 0.8rem;
+}
+
+.summary-card strong {
+  font-size: 1.8rem;
+}
+
+.summary-languages ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.summary-languages li {
+  display: flex;
+  justify-content: space-between;
+}
+
+.filters-panel {
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.filters-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.filters-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.filters-grid label {
+  display: grid;
+  gap: 0.45rem;
+  color: #bed0cb;
+  font-size: 0.95rem;
+}
+
+.filters-grid input,
+.filters-grid select {
+  width: 100%;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.8rem 0.95rem;
+  background: rgba(255, 255, 255, 0.04);
+  color: #f3fbf8;
+}
+
+.repo-group {
+  margin-bottom: 2rem;
+}
+
+.repo-group-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 1rem;
+}
+
+.repo-group-head span {
+  color: #9cb4ad;
+}
+
+.repo-grid,
+.loading-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.repo-card {
+  padding: 1.4rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.repo-card-top,
+.detail-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.repo-owner {
+  color: #8bd8b2;
+  margin-bottom: 0.2rem;
+}
+
+.repo-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.repo-description,
+.detail-description {
+  color: #bdd0ca;
+}
+
+.repo-meta,
+.repo-tags,
+.detail-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 0.9rem;
+}
+
+.repo-meta span,
+.detail-grid span {
+  color: #90a49e;
+}
+
+.repo-badge,
+.repo-flag,
+.topic-pill {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 0.35rem 0.75rem;
+  background: rgba(255, 255, 255, 0.06);
+  font-size: 0.85rem;
+}
+
+.repo-flag.warning {
+  background: rgba(255, 184, 108, 0.18);
+  color: #ffca80;
+}
+
+.topic-pill {
+  background: rgba(139, 216, 178, 0.12);
+  color: #9de1c0;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.detail-grid div {
+  display: grid;
+  gap: 0.35rem;
+  padding: 1rem;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.detail-grid strong {
+  font-size: 1.15rem;
+}
+
+.loading-card {
+  min-height: 220px;
+  border-radius: 24px;
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.11), rgba(255, 255, 255, 0.05));
+  background-size: 200% 100%;
+  animation: shimmer 1.6s infinite linear;
+}
+
+.danger {
+  border-color: rgba(255, 120, 120, 0.35);
+}
+
+@keyframes shimmer {
+  from {
+    background-position: 200% 0;
+  }
+  to {
+    background-position: -200% 0;
+  }
+}
+
+@media (max-width: 1024px) {
+  .summary-grid,
+  .filters-grid,
+  .repo-grid,
+  .loading-grid,
+  .detail-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .page-shell,
+  .auth-shell {
+    width: min(100vw - 1rem, 100%);
+    padding: 1rem 0 3rem;
+  }
+
+  .app-header,
+  .filters-head,
+  .repo-group-head,
+  .repo-card-top,
+  .detail-head {
+    flex-direction: column;
+  }
+
+  .summary-grid,
+  .filters-grid,
+  .repo-grid,
+  .loading-grid,
+  .detail-grid {
+    grid-template-columns: 1fr;
+  }
+}
