@@ -1,6 +1,6 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { clearSession } from '../_lib/session';
-import { error } from '../_lib/http';
+import { clearSession } from '../_lib/session.js';
+import { error } from '../_lib/http.js';
 
 export default async function handler(request: VercelRequest, response: VercelResponse) {
   if (request.method !== 'POST') {

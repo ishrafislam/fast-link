@@ -1,7 +1,7 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { fetchRepositories } from './_lib/github';
-import { error, json } from './_lib/http';
-import { readTokenFromRequest } from './_lib/session';
+import { fetchRepositories } from './_lib/github.js';
+import { error, json } from './_lib/http.js';
+import { readTokenFromRequest } from './_lib/session.js';
 
 export default async function handler(request: VercelRequest, response: VercelResponse) {
   if (request.method !== 'GET') {

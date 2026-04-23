@@ -1,4 +1,4 @@
-import type { OrganizationSummary, RepositorySummary, SessionUser } from '@shared/github';
+import type { OrganizationSummary, RepositorySummary, SessionUser } from '../../shared/github.js';
 
 interface GitHubOwner {
   login: string;

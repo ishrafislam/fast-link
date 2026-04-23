@@ -1,6 +1,6 @@
 import { createCipheriv, createDecipheriv, createHash, randomBytes } from 'node:crypto';
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { getRequiredEnv } from './env';
+import { getRequiredEnv } from './env.js';
 
 const COOKIE_NAME = 'fast_link_session';
 const MAX_AGE_SECONDS = 60 * 60 * 8;

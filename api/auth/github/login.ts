@@ -1,6 +1,6 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { getBaseUrl, getRequiredEnv } from '../../_lib/env';
-import { error } from '../../_lib/http';
+import { getBaseUrl, getRequiredEnv } from '../../_lib/env.js';
+import { error } from '../../_lib/http.js';
 
 export default async function handler(request: VercelRequest, response: VercelResponse) {
   if (request.method !== 'GET') {
