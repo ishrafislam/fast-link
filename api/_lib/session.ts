@@ -3,7 +3,6 @@ import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { getRequiredEnv } from './env.js';
 
 const COOKIE_NAME = 'fast_link_session';
-const MAX_AGE_SECONDS = 60 * 60 * 8;
 
 function getKey() {
   return createHash('sha256').update(getRequiredEnv('SESSION_SECRET')).digest();
@@ -17,7 +16,7 @@ export function createSessionCookie(token: string): string {
   const payload = Buffer.concat([iv, authTag, encrypted]).toString('base64url');
   const secure = process.env.NODE_ENV === 'production' ? '; Secure' : '';
 
-  return `${COOKIE_NAME}=${payload}; HttpOnly; Max-Age=${MAX_AGE_SECONDS}; Path=/; SameSite=Lax${secure}`;
+  return `${COOKIE_NAME}=${payload}; HttpOnly; Path=/; SameSite=Lax${secure}`;
 }
 
 export function clearSessionCookie(): string {
